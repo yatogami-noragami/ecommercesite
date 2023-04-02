@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="ecs.css">
+
+    <title>E Commerce Site</title>
+</head>
+
+<body class="" style="background-color: indianred;">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg foregroundColor fixed-top">
+        <div class="container-fluid">
+            <a href="ecs.html" class=" navbar-brand btn rounded-circle">
+                <img src="image/brand.png" alt="" class="img-fluid rounded-circle border border-black" id="brandLogo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link fw-bold fs-5" aria-current="page" href="ecs.html">Home</a>
+                    <a class="nav-link fw-bold fs-5" href="ecsMen.html">Men's Clothing</a>
+                    <a class="nav-link accentColor fw-bold fs-5" href="ecsWomen.html">Women's Clothing</a>
+                    <a class="nav-link fw-bold fs-5" href="ecsShoe.html">Shoes</a>
+                    <a class="nav-link fw-bold fs-5" href="ecsSD.html">Sales & Deals</a>
+                    <a class="nav-link fw-bold fs-5" href="ecsAU.html">About Us</a>
+                </div>
+
+                <div class=" d-md-block d-lg-none">
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" name="search" id="search" class="form-control fw-bold"
+                                placeholder="Search...">
+                            <a href="#!" class="btn">
+                                <i class="bi bi-search fs-3"></i>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="d-lg-block d-none" id="searchBar">
+            <form action="">
+                <div class="input-group">
+                    <input type="text" name="search" id="search" class="form-control fw-bold" placeholder="Search...">
+                    <a href="#!" class="btn">
+                        <i class="bi bi-search fs-3"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+
+
+        <a href="#!" class="btn border border-black mt-3" id="cartBtn" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight">
+            <i class="bi bi-cart-fill fs-3"></i>
+        </a>
+
+
+    </nav>
+
+    <!-- My Cart -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">My cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body ">
+            <h5 class=" text-secondary border border-secondary rounded-pill text-center p-3">No item here</h5>
+        </div>
+
+        <div class=" p-5">
+            <a href="#!" class="btn btn-dark w-100 my-5">view cart details</a>
+        </div>
+    </div>
+
+    <!-- Filter -->
+    <section id="filterDiv" class="bg-dark rounded  d-none d-md-block">
+        <button class="btn btn-light my-3 w-100" type="button" data-bs-toggle="collapse"
+            data-bs-target="#filterCollapse" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fa-solid fa-filter"></i> filter setting
+        </button>
+
+        <div class=" bg-light mt-3 rounded collapse" id="filterCollapse">
+
+            <button class="btn btn-dark w-100 my-3" id="categoriesBtn">
+                <div class="d-flex justify-content-between align-items-center h-100">
+                    Categories
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+            </button>
+
+            <div class="p-3 border border-black rounded shadow-lg" id="categoriesFilter">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="categoriesRadio" id="categoriesAll">
+                    <label class="form-check-label" for="categoriesAll">
+                        All
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="categoriesRadio" id="clorem1">
+                    <label class="form-check-label" for="clorem1">
+                        lorem
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="categoriesRadio" id="clorem2">
+                    <label class="form-check-label" for="clorem2">
+                        lorem
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="categoriesRadio" id="clorem3">
+                    <label class="form-check-label" for="clorem3">
+                        lorem
+                    </label>
+                </div>
+
+                <hr>
+            </div>
+
+            <button class="btn btn-dark w-100 my-3" id="brandsBtn">
+                <div class="d-flex justify-content-between align-items-center h-100">
+                    Brands
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+            </button>
+
+            <div class="p-3 border border-black rounded shadow-lg" id="brandsFilter">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="brandsRadio" id="brandsAll">
+                    <label class="form-check-label" for="brandsAll">
+                        All
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="brandsRadio" id="blorem1">
+                    <label class="form-check-label" for="blorem1">
+                        lorem
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="brandsRadio" id="blorem2">
+                    <label class="form-check-label" for="blorem2">
+                        lorem
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="brandsRadio" id="blorem3">
+                    <label class="form-check-label" for="blorem3">
+                        lorem
+                    </label>
+                </div>
+
+                <hr>
+            </div>
+
+            <button class="btn btn-dark w-100 my-3" id="sizesBtn">
+                <div class="d-flex justify-content-between align-items-center h-100">
+                    Sizes
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+            </button>
+
+            <div class="p-3 border border-black rounded shadow-lg" id="sizesFilter">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sizesRadio" id="sizesAll">
+                    <label class="form-check-label" for="sizesAll">
+                        All
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sizesRadio" id="slorem1">
+                    <label class="form-check-label" for="slorem1">
+                        lorem
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sizesRadio" id="slorem2">
+                    <label class="form-check-label" for="slorem2">
+                        lorem
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sizesRadio" id="slorem3">
+                    <label class="form-check-label" for="slorem3">
+                        lorem
+                    </label>
+                </div>
+
+                <hr>
+            </div>
+
+            <button class="btn btn-dark w-100 my-3" id="pricesBtn">
+                <div class="d-flex justify-content-between align-items-center h-100">
+                    Prices
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+            </button>
+
+            <div class="p-3 border border-black rounded shadow-lg" id="pricesFilter">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pricesRadio" id="pricesAll">
+                    <label class="form-check-label" for="pricesAll">
+                        All
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pricesRadio" id="plorem1">
+                    <label class="form-check-label" for="plorem1">
+                        lorem - lorem
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pricesRadio" id="plorem2">
+                    <label class="form-check-label" for="plorem2">
+                        lorem - lorem
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pricesRadio" id="plorem3">
+                    <label class="form-check-label" for="plorem3">
+                        lorem - lorem
+                    </label>
+                </div>
+
+                <hr>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section id="displayDiv">
+
+        <div class="row mt-3 d-block d-md-none">
+            <button class="btn btn-dark w-75 d-block mx-auto" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#filterSettingMobile">
+                <i class="fa-solid fa-filter"></i> filter
+            </button>
+        </div>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="filterSettingMobile"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Filter settings</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <button class="btn btn-dark w-100 my-3" id="categoriesMobileBtn">
+                    <div class="d-flex justify-content-between align-items-center h-100">
+                        Categories
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                </button>
+
+                <div class="p-3 border border-black rounded shadow-lg" id="categoriesMobileFilter">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="categoriesMobileRadio"
+                            id="categoriesMobileAll">
+                        <label class="form-check-label" for="categoriesMobileAll">
+                            All
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="categoriesMobileRadio" id="cloremMobile1">
+                        <label class="form-check-label" for="cloremMobile1">
+                            lorem
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="categoriesMobileRadio" id="cloremMobile2">
+                        <label class="form-check-label" for="cloremMobile2">
+                            lorem
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="categoriesMobileRadio" id="cloremMobile3">
+                        <label class="form-check-label" for="cloremMobile3">
+                            lorem
+                        </label>
+                    </div>
+
+                    <hr>
+                </div>
+
+                <button class="btn btn-dark w-100 my-3" id="brandsMobileBtn">
+                    <div class="d-flex justify-content-between align-items-center h-100">
+                        Brands
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                </button>
+
+                <div class="p-3 border border-black rounded shadow-lg" id="brandsMobileFilter">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="brandsMobileRadio" id="brandsMobileAll">
+                        <label class="form-check-label" for="brandsMobileAll">
+                            All
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="brandsMobileRadio" id="bloremMobile1">
+                        <label class="form-check-label" for="bloremMobile1">
+                            lorem
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="brandsMobileRadio" id="bloremMobile2">
+                        <label class="form-check-label" for="bloremMobile2">
+                            lorem
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="brandsMobileRadio" id="bloremMobile3">
+                        <label class="form-check-label" for="bloremMobile3">
+                            lorem
+                        </label>
+                    </div>
+
+                    <hr>
+                </div>
+
+                <button class="btn btn-dark w-100 my-3" id="sizesMobileBtn">
+                    <div class="d-flex justify-content-between align-items-center h-100">
+                        Sizes
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                </button>
+
+                <div class="p-3 border border-black rounded shadow-lg" id="sizesMobileFilter">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sizesMobileRadio" id="sizesMobileAll">
+                        <label class="form-check-label" for="sizesMobileAll">
+                            All
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sizesMobileRadio" id="sloremMobile1">
+                        <label class="form-check-label" for="sloremMobile1">
+                            lorem
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sizesMobileRadio" id="sloremMobile2">
+                        <label class="form-check-label" for="sloremMobile2">
+                            lorem
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sizesMobileRadio" id="sloremMobile3">
+                        <label class="form-check-label" for="sloremMobile3">
+                            lorem
+                        </label>
+                    </div>
+
+                    <hr>
+                </div>
+
+                <button class="btn btn-dark w-100 my-3" id="pricesMobileBtn">
+                    <div class="d-flex justify-content-between align-items-center h-100">
+                        Prices
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                </button>
+
+                <div class="p-3 border border-black rounded shadow-lg" id="pricesMobileFilter">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pricesMobileRadio" id="pricesMobileAll">
+                        <label class="form-check-label" for="pricesMobileAll">
+                            All
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pricesMobileRadio" id="ploremMobile1">
+                        <label class="form-check-label" for="ploremMobile1">
+                            lorem - lorem
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pricesMobileRadio" id="ploremMobile2">
+                        <label class="form-check-label" for="ploremMobile2">
+                            lorem - lorem
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pricesMobileRadio" id="ploremMobile3">
+                        <label class="form-check-label" for="ploremMobile3">
+                            lorem - lorem
+                        </label>
+                    </div>
+
+                    <hr>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container p-5">
+            <h3 class="mt-5 text-decoration-underline" style="color: lightblue;">Women's Clothing Items</h3>
+            <div class="row mt-5">
+                <a href="ecsView.html" class="btn col-lg-3 col-md-4 col-6 shadow-lg p-3  rounded">
+                    <div class="bg-light rounded productImage">
+                        <div class="d-flex justify-content-center align-items-center h-100 text-black">
+                            IMAGE
+                        </div>
+                    </div>
+                </a>
+
+                <a href="ecsView.html" class="btn col-lg-3 col-md-4 col-6 shadow-lg p-3  rounded">
+                    <div class="bg-light rounded productImage">
+                        <div class="d-flex justify-content-center align-items-center h-100 text-black">
+                            IMAGE
+                        </div>
+                    </div>
+                </a>
+
+                <a href="ecsView.html" class="btn col-lg-3 col-md-4 col-6 shadow-lg p-3  rounded">
+                    <div class="bg-light rounded productImage">
+                        <div class="d-flex justify-content-center align-items-center h-100 text-black">
+                            IMAGE
+                        </div>
+                    </div>
+                </a>
+
+                <a href="ecsView.html" class="btn col-lg-3 col-md-4 col-6 shadow-lg p-3  rounded">
+                    <div class="bg-light rounded productImage">
+                        <div class="d-flex justify-content-center align-items-center h-100 text-black">
+                            IMAGE
+                        </div>
+                    </div>
+                </a>
+
+                <a href="ecsView.html" class="btn col-lg-3 col-md-4 col-6 shadow-lg p-3  rounded">
+                    <div class="bg-light rounded productImage">
+                        <div class="d-flex justify-content-center align-items-center h-100 text-black">
+                            IMAGE
+                        </div>
+                    </div>
+                </a>
+
+                <a href="ecsView.html" class="btn col-lg-3 col-md-4 col-6 shadow-lg p-3  rounded">
+                    <div class="bg-light rounded productImage">
+                        <div class="d-flex justify-content-center align-items-center h-100 text-black">
+                            IMAGE
+                        </div>
+                    </div>
+                </a>
+
+                <a href="ecsView.html" class="btn col-lg-3 col-md-4 col-6 shadow-lg p-3  rounded">
+                    <div class="bg-light rounded productImage">
+                        <div class="d-flex justify-content-center align-items-center h-100 text-black">
+                            IMAGE
+                        </div>
+                    </div>
+                </a>
+
+                <a href="ecsView.html" class="btn col-lg-3 col-md-4 col-6 shadow-lg p-3  rounded">
+                    <div class="bg-light rounded productImage">
+                        <div class="d-flex justify-content-center align-items-center h-100 text-black">
+                            IMAGE
+                        </div>
+                    </div>
+                </a>
+
+                <a href="ecsView.html" class="btn col-lg-3 col-md-4 col-6 shadow-lg p-3  rounded">
+                    <div class="bg-light rounded productImage">
+                        <div class="d-flex justify-content-center align-items-center h-100 text-black">
+                            IMAGE
+                        </div>
+                    </div>
+                </a>
+
+                <a href="ecsView.html" class="btn col-lg-3 col-md-4 col-6 shadow-lg p-3  rounded">
+                    <div class="bg-light rounded productImage">
+                        <div class="d-flex justify-content-center align-items-center h-100 text-black">
+                            IMAGE
+                        </div>
+                    </div>
+                </a>
+
+                <a href="ecsView.html" class="btn col-lg-3 col-md-4 col-6 shadow-lg p-3  rounded">
+                    <div class="bg-light rounded productImage">
+                        <div class="d-flex justify-content-center align-items-center h-100 text-black">
+                            IMAGE
+                        </div>
+                    </div>
+                </a>
+
+                <a href="ecsView.html" class="btn col-lg-3 col-md-4 col-6 shadow-lg p-3  rounded">
+                    <div class="bg-light rounded productImage">
+                        <div class="d-flex justify-content-center align-items-center h-100 text-black">
+                            IMAGE
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Pagination -->
+            <section class=" mt-5">
+                <div class="container d-flex justify-content-center">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+
+                            <li class="page-item mx-3">
+                                <a class="page-link accentColor rounded-circle bg-transparent border-0 fw-bold fs-4"
+                                    href="#!" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+
+                            <li class="page-item mx-3"><a
+                                    class="page-link text-black rounded-circle bg-transparent border-0 fw-bold fs-4 active"
+                                    href="#!">1</a>
+                            </li>
+                            <li class="page-item mx-3"><a
+                                    class="page-link accentColor rounded-circle bg-transparent border-0 fw-bold fs-4"
+                                    href="#!">2</a>
+                            </li>
+                            <li class="page-item mx-3"><a
+                                    class="page-link accentColor rounded-circle bg-transparent border-0 fw-bold fs-4"
+                                    href="#!">3</a>
+                            </li>
+
+                            <li class="page-item mx-3">
+                                <a class="page-link accentColor rounded-circle bg-transparent border-0 fw-bold fs-4"
+                                    href="#!" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+
+        </div>
+    </section>
+
+    <!-- Back To Top Button -->
+    <button class="btn " id="bttBtn">
+        <i class="bi bi-arrow-up-circle-fill fw-bolder fs-1"></i>
+    </button>
+
+
+</body>
+
+<!-- Bootstrap CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"></script>
+
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+    crossorigin="anonymous"></script>
+
+<!-- Local Js -->
+<script src="ecs.js"></script>
+
+</html>
