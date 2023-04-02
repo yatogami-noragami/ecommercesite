@@ -1,14 +1,18 @@
 $(document).ready(function () {
+
+    //When User Scroll
     $(window).scroll(function () {
         setInterval(function () {
             $('#bttBtn').css('animation', 'bttAnimation 400ms ease-out forwards');
         }, 3000);
     });
 
+    //Back To Top Button
     $('#bttBtn').click(function () {
         $('html,body').scrollTop(0);
     });
 
+    //Filter Settings
     $('#categoriesFilter').hide();
     $('#brandsFilter').hide();
     $('#sizesFilter').hide();
@@ -35,6 +39,7 @@ $(document).ready(function () {
         $('#pricesFilter').fadeToggle();
     });
 
+    //Filter Settings For Mobile
     $('#categoriesMobileBtn').click(function () {
         $('#categoriesMobileFilter').fadeToggle();
     });
@@ -51,11 +56,13 @@ $(document).ready(function () {
         $('#pricesMobileFilter').fadeToggle();
     });
 
+    //Images In Product View
     $('.productAnotherImage').click(function () {
         $('.productAnotherImage').removeClass('border');
         $(this).addClass('border');
     });
 
+    //Favourite Product
     $('#heartItem').click(function () {
         $('#heartItem i').toggleClass('fa-regular');
         $('#heartItem i').toggleClass('fa-solid');
