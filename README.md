@@ -21,4 +21,4 @@
 <img src="./image/readme6.png">
 
 <h3>About Us</h3>
-<img src="./image/readme7.png">`
+<img src="./image/readme7.png">
